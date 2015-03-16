@@ -18,7 +18,7 @@ enum {
 
 @interface ViewController : UIViewController {
     
-    Node *root ;
+    Node *head ;
     Node *tail ;
     int traversalDirection ;
 }

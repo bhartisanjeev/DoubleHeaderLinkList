@@ -22,13 +22,13 @@
     
     for (int index = 0; index < 10 ; index++) {
         
-        [self insertNode:root withData:arc4random() % 20000];
+        [self insertNode:head withData:arc4random() % 20000];
         
     }
 
     NSLog(@"\n\n\n Forward Traversal begin");
     traversalDirection = TraversalDirectionForward ;
-    [self traversalLinklistwithRootNode:root];
+    [self traversalLinklistwithRootNode:head];
 
     NSLog(@"\n\n\n Backward Traversal begin");
     traversalDirection = TraversalDirectionBackward ;
@@ -47,10 +47,10 @@
 //methods to insert data to doubly link list
 - (Node *)insertNode:(Node *)node withData:(int)data {
     
-    if (root == NULL) {
+    if (head == NULL) {
         
-        root = [self createNodeWithData:data];
-        node = tail = root ;
+        head = [self createNodeWithData:data];
+        node = tail = head ;
 
     } else if (node == NULL) {
         
