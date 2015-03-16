@@ -10,4 +10,8 @@
 
 @interface Node : NSObject
 
+@property int   data ;
+@property Node *next ;
+@property Node *back ;
+
 @end
