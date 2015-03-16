@@ -20,7 +20,11 @@ enum {
     
     Node *head ;
     Node *tail ;
-    int traversalDirection ;
+    int   traversalDirection ;
+    
+    //UI Element - Just for fun
+    IBOutlet UILabel *lbldoubleHeaderLinkList ;
+    
 }
 
 //methods to insert data to doubly link list

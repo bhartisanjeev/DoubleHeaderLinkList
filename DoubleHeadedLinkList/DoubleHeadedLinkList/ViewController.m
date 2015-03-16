@@ -11,6 +11,7 @@
 @interface ViewController ()
 
 - (Node *)createNodeWithData :(int)data ;
+- (void)animateLabel ;
 
 @end
 
@@ -20,10 +21,11 @@
 
     [super viewDidLoad];
     
+    [self animateLabel];
+    
     for (int index = 0; index < 10 ; index++) {
         
         [self insertNode:head withData:arc4random() % 20000];
-        
     }
 
     NSLog(@"\n\n\n Forward Traversal begin");
@@ -99,6 +101,27 @@
     _node.back = NULL ;
     return _node ;
     
+}
+
+- (void)animateLabel {
+    
+    [UIView animateWithDuration:0.5f animations:^{
+        
+        lbldoubleHeaderLinkList.transform = CGAffineTransformMakeScale(1.6f, 1.6f) ;
+        lbldoubleHeaderLinkList.alpha = 1.0f ;
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:0.4f animations:^{
+            
+            lbldoubleHeaderLinkList.transform = CGAffineTransformMakeScale(1.0f, 1.0f) ;
+            lbldoubleHeaderLinkList.alpha = 0.0f ;
+            
+        } completion:^(BOOL finished) {
+            
+            [self animateLabel];
+            
+        }];
+    }];
 }
 
 @end
